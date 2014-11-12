@@ -94,7 +94,7 @@
 						$subject_post     = $sender_name_post .' - '.qa_post_text('subject') ;
 
 						if (count($bcclist) && !empty($message_post) && !empty($sender_name_post) && !empty($subject_post) ) {
-							$body = qa_lang('invite/greeting'). $message_post . qa_lang('invite/thanks') ;
+							$body = $message_post . qa_lang('invite/thanks') ;
 							$body = strtr($body, $subs ) ;
 							$body = nl2br($body) ;
 							$params = array(
