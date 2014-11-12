@@ -80,9 +80,9 @@
 					// send the invite messages 
 					$bcclist = array() ;
 
-					$receipient_addr = qa_post_text('receipient_addr');
-					if (!empty($receipient_addr)) {
-						$email_arr = explode(',', $receipient_addr);
+					$recipient_addr = qa_post_text('recipient_addr');
+					if (!empty($recipient_addr)) {
+						$email_arr = explode(',', $recipient_addr);
 						foreach ($email_arr as $key => $email) {
 							if (qa_email_validate(trim($email))) {
 								$bcclist[] = trim($email);
@@ -125,7 +125,7 @@
 			$message              = qa_lang_html('invite/message');
 			$subject              = strtr(qa_lang_html('invite/subject') , $subs );
 			
-			$receipient_addr_post = qa_post_text('receipient_addr');
+			$recipient_addr_post = qa_post_text('recipient_addr');
 			$sender_name_post     = qa_post_text('sender_name');
 			$subject_post         = qa_post_text('subject');
 			$message_post         = qa_post_text('message');
@@ -140,19 +140,17 @@
 				'title' => qa_lang_html('invite/invite'),
 				
 				'fields' => array(
-						'sender_name' => array(
+					'sender_name' => array(
 						'label'       => qa_lang_html('invite/sender_name_lable'),
 						'tags'        => 'name="sender_name" placeholder="'.qa_lang_html('invite/sender_name_plc').'"',
 						'value'       => $sender_name,
 						'error'       => $errors && empty($sender_name_post) ? qa_lang_html('invite/required_field') : null ,
 					),
-					'receipient_addr' => array(
-						'label' => qa_lang_html('invite/receipient_addr_lable'),
-						'tags'  => 'name="receipient_addr" placeholder="'.qa_lang_html('invite/receipient_addr_plc').'"',
-						'type'  => 'textarea' , 
-						'rows'  => 3,
-						'note'  => qa_lang_html('invite/receipient_addr_note'),
-						'error' => $errors && empty($receipient_addr) ? qa_lang_html('invite/required_field') : null ,
+					'recipient_addr' => array(
+						'label' => qa_lang_html('invite/recipient_addr_lable'),
+						'tags'  => 'name="recipient_addr" placeholder="'.qa_lang_html('invite/recipient_addr_plc').'"',
+						'note'  => qa_lang_html('invite/recipient_addr_note'),
+						'error' => $errors && empty($recipient_addr) ? qa_lang_html('invite/required_field') : null ,
 					),
 					'subject' => array(
 						'label' => qa_lang_html('invite/subject_lable'),
