@@ -26,16 +26,16 @@
 */
 
 /*
-	Plugin Name: Invite 
-	Plugin URI: http://www.amiyasahu.com/
-	Plugin Description: Invite Others plugin via email 
+	Plugin Name: Q2A Send Invite 
+	Plugin URI: https://github.com/amiyasahu/q2a-send-invites
+	Plugin Description: Invite Others via email 
 	Plugin Version: 1.0
 	Plugin Date: 2014-11-06
 	Plugin Author: Amiya Sahu
 	Plugin Author URI: http://www.amiyasahu.com/
 	Plugin License: GPLv2
 	Plugin Minimum Question2Answer Version: 1.5
-	Plugin Update Check URI: 
+	Plugin Update Check URI: https://raw.githubusercontent.com/amiyasahu/q2a-send-invites/master/qa-plugin.php
 */
 
 
