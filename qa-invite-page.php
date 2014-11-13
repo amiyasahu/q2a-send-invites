@@ -159,7 +159,7 @@
 						'error' => $errors && empty($subject_post) ? qa_lang_html('invite/required_field') : null ,
 					),
 					'message' => array(
-						'label' => qa_lang_html('invite/message'),
+						'label' => qa_lang_html('invite/message_lable'),
 						'tags'  => 'name="message" placeholder="'.qa_lang_html('invite/message_plc').'"',
 						'type'  => 'textarea' , 
 						'value' => $message , 
