@@ -141,19 +141,19 @@
 				
 				'fields' => array(
 					'sender_name' => array(
-						'label'       => qa_lang_html('invite/sender_name_lable'),
+						'label'       => qa_lang_html('invite/sender_name_label'),
 						'tags'        => 'name="sender_name" placeholder="'.qa_lang_html('invite/sender_name_plc').'"',
 						'value'       => $sender_name,
 						'error'       => $errors && empty($sender_name_post) ? qa_lang_html('invite/required_field') : null ,
 					),
 					'recipient_addr' => array(
-						'label' => qa_lang_html('invite/recipient_addr_lable'),
+						'label' => qa_lang_html('invite/recipient_addr_label'),
 						'tags'  => 'name="recipient_addr" placeholder="'.qa_lang_html('invite/recipient_addr_plc').'"',
 						'note'  => qa_lang_html('invite/recipient_addr_note'),
 						'error' => $errors && empty($recipient_addr) ? qa_lang_html('invite/required_field') : null ,
 					),
 					'subject' => array(
-						'label' => qa_lang_html('invite/subject_lable'),
+						'label' => qa_lang_html('invite/subject_label'),
 						'tags'  => 'name="subject" placeholder="'.qa_lang_html('invite/subject_plc').'"',
 						'value' => $subject ,
 						'error' => $errors && empty($subject_post) ? qa_lang_html('invite/required_field') : null ,
