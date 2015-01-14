@@ -60,6 +60,7 @@
 		{
 			$invitation_sent = false ; 
 			$errors = false ; 
+			$captchareason=qa_user_captcha_reason();
 
 			$handle          = qa_get_logged_in_handle() ;
 			$senders_data    = QA_FINAL_EXTERNAL_USERS ? null : qa_db_select_with_pending(qa_db_user_profile_selectspec($handle, false));
@@ -73,10 +74,17 @@
 					);
 
 			if (qa_clicked('doinvite')) { 
+
+				if ($captchareason) {
+					require_once QA_INCLUDE_DIR.'qa-app-captcha.php';
+					qa_captcha_validate_post($errors);
+				}
+
 				if (!qa_check_form_security_code('invite', qa_post_text('code'))){
 					$errors['page']=qa_lang_html('misc/form_security_again');
 				}
-				else {
+				else if(empty($errors)){
+					
 					// send the invite messages 
 					$bcclist = array() ;
 
@@ -129,7 +137,7 @@
 			$sender_name_post     = qa_post_text('sender_name');
 			$subject_post         = qa_post_text('subject');
 			$message_post         = qa_post_text('message');
-
+			
 			$qa_content['form']=array(
 				'tags'  => 'method="post" action="'.qa_self_html().'"',
 				
@@ -180,6 +188,11 @@
 					'doinvite' => '1',
 				),
 			);
+			
+			if ($captchareason) {
+				require_once QA_INCLUDE_DIR.'qa-app-captcha.php';
+				qa_set_up_captcha_field($qa_content, $qa_content['form']['fields'], @$errors, qa_captcha_reason_note($captchareason));
+			}
 
 			return $qa_content;
 		}
