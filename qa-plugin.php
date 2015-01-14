@@ -29,8 +29,8 @@
 	Plugin Name: Q2A Send Invite 
 	Plugin URI: https://github.com/amiyasahu/q2a-send-invites
 	Plugin Description: Invite Others via email 
-	Plugin Version: 1.0
-	Plugin Date: 2014-11-06
+	Plugin Version: 1.2.0
+	Plugin Date: 2015-01-15
 	Plugin Author: Amiya Sahu
 	Plugin Author URI: http://www.amiyasahu.com/
 	Plugin License: GPLv2
